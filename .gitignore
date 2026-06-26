@@ -41,3 +41,6 @@ web/dist/
 # MCP temp / cache
 MCP/__pycache__/
 SearchTool/__pycache__/
+
+# local Readme
+local_readme
