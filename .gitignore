@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+*.egg
+
+# Sessions (agent conversation history)
+sessions/
+
+# Logs
+log.txt
+log.txt.*
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# IDE / Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Environment / secrets
+.env
+.env.local
+.env.*.local
+
+# Node (Web UI frontend)
+web/node_modules/
+web/dist/
+
+# MCP temp / cache
+MCP/__pycache__/
+SearchTool/__pycache__/
