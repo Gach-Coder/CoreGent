@@ -8,7 +8,7 @@
 - **7 个内置工具** —— 文件读写、目录浏览、Shell 命令执行、文件搜索、网页搜索/抓取
 - **MCP 协议集成** —— 通过 Model Context Protocol 连接外部工具服务器，即插即用扩展能力
 - **Web UI** —— React 前端 + Flask/SSE 流式后端，支持思考过程展示、可折叠工具调用卡
-- **全链路日志** —— 每次 LLM 输入/输出、工具执行、上下文快照均写入 `log.txt`，方便调试审计
+- **全链路日志** —— 每次 LLM 输入/输出、工具执行、上下文快照均写入日志文件，方便调试审计
 - **流式输出** —— 终端打字机效果，实时展示模型回复
 
 ## 架构
@@ -38,7 +38,7 @@
 | `agent.py` | 核心 Agent，封装模型调用与工具执行循环 |
 | `tools.py` | 7 个内置工具 + MCP 工具注册 |
 | `mcp_client.py` | MCP 客户端，通过 stdio 连接外部工具服务器 |
-| `logger.py` | 全链路日志，写入 `log.txt` |
+| `logger.py` | 全链路日志，记录每一步 LLM/工具交互 |
 | `web_ui.py` | Flask 后端，SSE 流式 + React 静态文件 |
 | `web/` | React 前端 (Vite + useReducer) |
 | `config.py` | 所有配置，均支持环境变量覆盖 |
@@ -155,7 +155,6 @@ CoreGent/
 ├── config.py            # 配置
 ├── MCP/                 # MCP 服务端
 ├── SearchTool/          # 搜索引擎模块
-├── sessions/            # 会话存储
 └── requirements.txt     # 依赖清单
 ```
 
